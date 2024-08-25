@@ -6,17 +6,35 @@
     <title>Atividade 2 - Semana 2</title>
 
     <style>
-        #clock {
-            font-size: 2em;
-            font-family: Arial, sans-serif;
-        }
+    .relogio {
+        position: relative;
+        display: inline-block;
+    }
+
+    #clock {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 4em; 
+        color: white; 
+    }
+
+    #img {
+        display: block;
+        width: 100%; 
+        height: auto;
+    }
+
     </style>
         
     
 </head>
 <body>
-    <div id="clock"></div>
-    
+    <div class="relogio">
+        <div id="clock"></div>
+        <img id="img" src="relogio-digital.webp" alt="Relógio Digital">
+    </div>
     <script type="text/javascript" language="javascript" src="script.js"></script>
 
     
