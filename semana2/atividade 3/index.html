@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 3 - Semana 2</title>
+    <style>
+        .pergunta {
+            text-align: center;
+            padding: 2%;
+            width: 50%;
+            margin: auto;
+        }
+
+        input {
+            margin-top: 10px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #000;
+            width: 250px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #000;
+            background-color: #000;
+            color: #fff;
+            cursor: pointer;
+
+        }
+        button:hover {
+            background-color: red;
+            color: #fff;
+        }
+        ::placeholder {
+            text-align: center;
+        
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="pergunta">
+        <h1>Testador de Palíndromo</h1>
+        <input type="text" id="palavra" placeholder="Digite uma palavra">
+        <button onclick="verificar()">Verificar</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script type="text/javascript" language="javascript" src="script.js"></script> <!-- O script permanece aqui por causa do carregamento do DOM -->
+</body>
+</html>
