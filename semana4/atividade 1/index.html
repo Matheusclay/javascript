@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 1 - Semana 4</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Formulário de Cadastro:</h1>
+        <form id="cadastroForm">
+           
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" placeholder="Digite seu nome completo" required>
+
+            <!-- Mensagem de erro para Nome -->
+            <div class="error" id="erroNome"></div>
+
+            
+            <div class="linha">
+                <div class="coluna">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="fulano@exemplo.com" required>
+                    <div class="error" id="erroEmail"></div>
+                </div>
+                <div class="coluna">
+                    <label for="dataNascimento">Data Nascimento:</label>
+                    <input type="date" id="dataNascimento" placeholder="dd/mm/aaaa" required>
+                    <div class="error" id="erroDataNascimento"></div>
+                </div>
+            </div>
+
+            
+            <div class="linha">
+                <div class="coluna">
+                    <label for="telefoneFixo">Telefone Fixo:</label>
+                    <input type="text" id="telefoneFixo" placeholder="(99)9999-9999" required>
+                    <div class="error" id="erroTelefoneFixo"></div>
+                </div>
+                <div class="coluna">
+                    <label for="telefoneCelular">Telefone Celular:</label>
+                    <input type="text" id="telefoneCelular" placeholder="(99)99999-9999" required>
+                    <div class="error" id="erroTelefoneCelular"></div>
+                </div>
+                
+                <div class="coluna perfil">
+                    <div>
+                        <input type="radio" id="professor" name="perfil" value="Professor" required>
+                        <label for="professor">Professor</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="aluno" name="perfil" value="Aluno" required>
+                        <label for="aluno">Aluno</label>
+                    </div>
+                    <div class="error" id="erroPerfil"></div>
+                </div>
+            </div>
+
+            <!-- Campos dinâmicos para Professor -->
+            <div id="camposProfessor" style="display: none;">
+                <div class="linha">
+                    <div class="coluna">
+                        <label for="areaAtuacao">Área de Atuação:</label>
+                        <input type="text" id="areaAtuacao">
+                        <div class="error" id="erroAreaAtuacao"></div>
+                    </div>
+                    <div class="coluna">
+                        <label for="matriculaProfessor">Matrícula:</label>
+                        <input type="text" id="matriculaProfessor" placeholder="5 dígitos">
+                        <div class="error" id="erroMatriculaProfessor"></div>
+                    </div>
+                </div>
+                <label for="linkLattes">Link do Lattes:</label>
+                <input type="text" id="linkLattes" placeholder="http://lattes.cnpq.br/">
+                <div class="error" id="erroLinkLattes"></div>
+            </div>
+
+            <!-- Campos dinâmicos para Aluno -->
+            <div id="camposAluno" style="display: none;">
+                <div class="linha">
+                    <div class="coluna">
+                        <label for="curso">Curso:</label>
+                        <input type="text" id="curso">
+                        <div class="error" id="erroCurso"></div>
+                    </div>
+                    <div class="coluna">
+                        <label for="matriculaAluno">Matrícula:</label>
+                        <input type="text" id="matriculaAluno" placeholder="10 dígitos">
+                        <div class="error" id="erroMatriculaAluno"></div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <button type="submit">Enviar</button>
+            <button type="reset">Redefinir</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

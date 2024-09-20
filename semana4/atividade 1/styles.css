@@ -1,0 +1,80 @@
+
+.container {
+    width: 600px;
+    margin: 0 auto;
+    font-family: Helvetica, sans-serif;
+}
+
+h1 {
+    font-size: 26px;
+    color: #000;
+    text-align: center;
+}
+
+label {
+    font-size: 10px;
+    color: rgba(34, 34, 34, 0.9);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="tel"] {
+    font-size: 12px;
+    color: #999;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 5px;
+    width: 100%;
+    padding: 5px 0;
+}
+
+.linha {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.coluna {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.coluna:last-child {
+    margin-right: 0;
+}
+
+button {
+    font-size: 12px;
+    background-color: #eee;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.error {
+    color: red;
+    font-size: 10px;
+    margin-bottom: 5px;
+}
+
+.perfil {
+    align-items: center;
+    margin-top: 10px;
+}
+
+.perfil label {
+    margin-right: 5px;
+}
+
+.perfil input[type="radio"] {
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+#camposProfessor,
+#camposAluno {
+    margin-top: 10px;
+}
