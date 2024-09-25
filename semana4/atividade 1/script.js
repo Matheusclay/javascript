@@ -26,7 +26,7 @@ class Aluno extends Pessoa {
     }
 }
 
-// Mostrar o perfil selecionado e ocultar o outro ...
+
 function atualizarCamposDinamicos() {
     var perfilProfessor = document.getElementById('professor').checked;
     var perfilAluno = document.getElementById('aluno').checked;
@@ -46,11 +46,10 @@ function atualizarCamposDinamicos() {
     }
 }
 
-// Adicionar eventos de mudança de perfil
+
 document.getElementById('professor').addEventListener('change', atualizarCamposDinamicos);
 document.getElementById('aluno').addEventListener('change', atualizarCamposDinamicos);
 
-// Validação dos campos ao perder o foco (onBlur)
 function adicionarValidacaoOnBlur(campo, funcaoValidacao) {
     campo.addEventListener('blur', funcaoValidacao);
 }
@@ -205,7 +204,7 @@ adicionarValidacaoOnBlur(document.getElementById('linkLattes'), validarLinkLatte
 adicionarValidacaoOnBlur(document.getElementById('curso'), validarCurso);
 adicionarValidacaoOnBlur(document.getElementById('matriculaAluno'), validarMatriculaAluno);
 
-// Máscara para telefones
+
 function aplicarMascaraTelefone(event) {
     var input = event.target;
     var valor = input.value.replace(/\D/g, '');
@@ -227,7 +226,7 @@ function aplicarMascaraTelefone(event) {
 document.getElementById('telefoneFixo').addEventListener('input', aplicarMascaraTelefone);
 document.getElementById('telefoneCelular').addEventListener('input', aplicarMascaraTelefone);
 
-// Máscara para data de nascimento
+// M data de nascimento
 function aplicarMascaraData(event) {
     var input = event.target;
     var valor = input.value.replace(/\D/g, '');
