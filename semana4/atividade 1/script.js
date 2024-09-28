@@ -81,14 +81,35 @@ function validarEmail() {
 function validarDataNascimento() {
     var dataNascimento = document.getElementById('dataNascimento');
     var erroDataNascimento = document.getElementById('erroDataNascimento');
-    var dataValor = dataNascimento.value.trim();
-    var regexData = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[012])\/\d{4}$/;
-    if (!regexData.test(dataValor)) {
-        erroDataNascimento.textContent = 'Por favor, insira uma data no formato dd/mm/aaaa.';
+    var dataValor = dataNascimento.value;
+
+    if (!dataValor) {
+        erroDataNascimento.textContent = 'Por favor, selecione uma data.';
     } else {
-        erroDataNascimento.textContent = '';
+        var dataSelecionada = new Date(dataValor);
+        var hoje = new Date();
+
+        if (isNaN(dataSelecionada.getTime())) {
+            erroDataNascimento.textContent = 'Data inválida.';
+            return;
+        }
+
+        // Verificação de idade mínima (se aplicável)
+        var idade = hoje.getFullYear() - dataSelecionada.getFullYear();
+        var mes = hoje.getMonth() - dataSelecionada.getMonth();
+        if (mes < 0 || (mes === 0 && hoje.getDate() < dataSelecionada.getDate())) {
+            idade--;
+        }
+
+        if (idade < 18) {
+            erroDataNascimento.textContent = 'Você deve ter pelo menos 18 anos.';
+        } else {
+            erroDataNascimento.textContent = '';
+        }
     }
 }
+
+
 
 function validarTelefoneFixo() {
     var telefoneFixo = document.getElementById('telefoneFixo');
@@ -227,14 +248,7 @@ document.getElementById('telefoneFixo').addEventListener('input', aplicarMascara
 document.getElementById('telefoneCelular').addEventListener('input', aplicarMascaraTelefone);
 
 // M data de nascimento
-function aplicarMascaraData(event) {
-    var input = event.target;
-    var valor = input.value.replace(/\D/g, '');
-    valor = valor.substring(0, 8);
-    valor = valor.replace(/(\d{2})(\d)/, '$1/$2');
-    valor = valor.replace(/(\d{2})(\d)/, '$1/$2');
-    input.value = valor;
-}
+
 
 document.getElementById('dataNascimento').addEventListener('input', aplicarMascaraData);
 
