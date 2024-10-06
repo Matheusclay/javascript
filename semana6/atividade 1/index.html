@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Letreiro Venha estudar na Fatec</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+    h1 {
+      font-family: Arial, sans-serif;
+      font-size: 2em;
+      color: #d32f2f;
+      text-align: center;
+      margin-top: 20%;
+    }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    function Letreiro() {
+      const [texto, setTexto] = useState('');
+      const mensagem = 'Venha estudar na Fatec';
+
+      useEffect(() => {
+        let index = 0;
+        let timeoutId;
+
+        function type() {
+          if (index <= mensagem.length) {
+            setTexto(mensagem.substring(0, index));
+            index++;
+            timeoutId = setTimeout(type, 100);
+          } else {
+            
+            timeoutId = setTimeout(() => {
+              index = 0;
+              type();
+            }, 1000);
+          }
+        }
+
+        type();
+
+        return () => clearTimeout(timeoutId);
+      }, []);
+
+      return <h1>{texto}</h1>;
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<Letreiro />);
+    </script>
+</body>
+</html>
